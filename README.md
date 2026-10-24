@@ -11,7 +11,7 @@ notes name.
 | Cask | App | Notes |
 |---|---|---|
 | `ledge` | [Ledge](https://github.com/ShashankKarpal/ledge) | ADHD-first sidebar notepad. `brew uninstall --cask ledge` quits and removes the app; `--zap` also removes its settings and local safety copies. Your notes folder is never touched. |
-| `zest` | [Zest](https://github.com/ShashankKarpal/zest) | Menu bar battery command center, Apple Silicon, macOS 14 or later. `brew uninstall --cask zest` boots out and deletes the `com.zest.app` LaunchAgent if one was installed, then quits and removes the app; `--zap` also removes its settings and history. The optional root helper is removed with its own script from a clone (`sudo bash zest-smc/uninstall-helper.sh`). |
+| `zest` | [Zest](https://github.com/ShashankKarpal/zest) | Menu bar battery command center, Apple Silicon, macOS 14 or later. `brew uninstall --cask zest` boots out and deletes the `com.zest.app` LaunchAgent if one was installed, then quits and removes the app; `--zap` also removes its settings and history folder (an event log folder you chose elsewhere stays). `brew upgrade` boots out that LaunchAgent too: run the repo's `scripts/install-launchagent.sh` again afterwards, or use Zest's own launch-at-login setting. The optional root helper is removed with its own script from a clone (`sudo bash zest-smc/uninstall-helper.sh`). |
 
 Casks are updated by hand when a release is cut: bump `version`, paste the
 `sha256` from the release notes, commit. No automation edits this repository.

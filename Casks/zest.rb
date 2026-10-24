@@ -23,7 +23,8 @@ cask "zest" do
   # The repo's scripts/install-launchagent.sh can register a KeepAlive LaunchAgent
   # (com.zest.app). Homebrew runs launchctl before quit, so the job is booted out and its
   # plist deleted first; otherwise launchd would relaunch the app the moment it quits, and
-  # keep retrying a deleted app forever.
+  # keep retrying a deleted app forever. Homebrew also runs this on upgrade and reinstall
+  # (only `signal` is skipped there), hence the caveat.
   uninstall launchctl: "com.zest.app",
             quit:      "com.shanky.zest"
 
@@ -34,4 +35,11 @@ cask "zest" do
     "~/Library/Application Support/Zest",
     "~/Library/Preferences/com.shanky.zest.plist",
   ]
+
+  caveats <<~EOS
+    For launch at login, use Zest's own setting (Settings > General).
+    If you instead registered the com.zest.app LaunchAgent with the repo's
+    scripts/install-launchagent.sh, brew uninstall, upgrade and reinstall boot it
+    out and delete its plist; run that script again after an upgrade.
+  EOS
 end
