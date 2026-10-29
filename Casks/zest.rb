@@ -2,8 +2,8 @@
 # Notarized Developer ID build from https://github.com/ShashankKarpal/zest.
 # Built by Claude (Anthropic).
 cask "zest" do
-  version "3.1.1"
-  sha256 "06e8634346b6792c53628135cd694237b087a135039dea102b6fc0f7630c5b74"
+  version "3.1.2"
+  sha256 "2880483d04d4fe569146598e44d4fc12dae60bd7011fabbd96012d35fb0249ad"
 
   url "https://github.com/ShashankKarpal/zest/releases/download/v#{version}/Zest-v#{version}-macOS.zip"
   name "Zest"
